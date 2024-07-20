@@ -56,3 +56,32 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 425px) {
+    .post {
+        width: 93%; /* Make post width responsive */
+        margin: 0px 0px 20px 0px; /* Adjust margin for smaller screens */
+    }
+
+    .postImg {
+        height: 200px; /* Reduce image height for smaller screens */
+    }
+
+    .postCat {
+        font-size: 14px; /* Adjust font size for categories */
+        margin-right: 5px; /* Reduce margin for categories */
+    }
+
+    .postTitle {
+        font-size: 20px; /* Adjust font size for titles */
+    }
+
+    .postAuthorDate {
+        font-size: 12px; /* Adjust font size for author/date info */
+    }
+
+    .postDesc {
+        font-size: 13px; /* Adjust font size for description */
+        -webkit-line-clamp: 3; /* Reduce number of lines visible */
+    }
+}

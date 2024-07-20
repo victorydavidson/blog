@@ -1,23 +1,46 @@
-.sidebar{
-    flex: 3;
-    margin: 20px;
-    padding-bottom: 30px;
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
     background-color: #fdfbfb;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow-y: auto;
+    transform: translateX(100%); /* Hide by default on small screens */
+    padding: 20px; /* Add padding for better spacing */
 }
-.sidebarItem{
+
+/* Show sidebar when toggled on small screens */
+.sidebar.show {
+    transform: translateX(0); /* Slide in */
+}
+
+/* Hide sidebar when closed */
+.sidebar.hide {
+    transform: translateX(100%); /* Slide out */
+}
+
+/* Sidebar Item Styles */
+.sidebarItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    width: 100%; /* Ensure items take full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
-.sidebarTitle{
-    margin: 10px;
+
+.sidebarTitle {
+    margin: 10px 0; /* Adjust margin for spacing */
     padding: 5px;
-    width: 80%;
+    width: 100%; /* Full width */
     border-top: 1px solid #a7a4a4;
     border-bottom: 1px solid #a7a4a4;
     font-family: 'Varela Round', sans-serif;
@@ -27,14 +50,15 @@
     line-height: 20px;
     text-align: center;
 }
-.sidebarItem > img{
+
+.sidebarItem > img {
     margin-top: 15px;
-    width: 250px; 
+    width: 100%; /* Ensure image fits within the sidebar */
     height: auto;
-    
 }
-.text{
-    padding:20px;
+
+.text {
+    padding: 20px;
     font-family: 'Varela Round', sans-serif;
     font-size: 15px;
     color: #444;
@@ -43,29 +67,85 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    text-align: center; /* Center text inside the sidebar */
 }
 
-.sidebarList{
+.sidebarList {
     list-style: none;
     margin-bottom: 30px;
-    margin-left: 80px;
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure list takes full width */
 }
-.sidebarListItem{
-    display: inline-block;
-    width: 50%;
-    margin-top: 15px;
+
+.sidebarListItem {
+    display: block; /* Block display to avoid inline-block wrapping issues */
+    margin-top: 10px;
     cursor: pointer;
+    text-align: center; /* Center list items */
 }
-.sidebarSocial{
+
+.sidebarSocial {
     margin-top: 15px;
-    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%; /* Ensure social icons fit within the sidebar */
 }
-.sidebarIcon{
-     font-size: 16px;
-     margin-left: 10px;
-     cursor: pointer;
 
+.sidebarIcon {
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    display: none; /* Hide by default */
+}
+
+/* Sidebar Close Button */
+.sidebar-close {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    align-self: flex-end; /* Align to top-right */
+    display: none; /* Hide by default */
+}
+
+/* Show sidebar toggle and close button on small screens */
+@media (max-width: 425px) {
+    .sidebar {
+        display: none; /* Hide sidebar by default on small screens */
+    }
+
+    .sidebar.show {
+        display: flex; /* Show sidebar when toggled */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show toggle button on small screens */
+    }
+
+    .sidebar-close {
+        display: block; /* Show close button on small screens */
+    }
+}
+
+/* Sidebar Static Styles for larger screens */
+@media (min-width: 426px) {
+    .sidebar {
+        position: static; /* Static position on larger screens */
+        transform: translateX(0); /* Always visible */
+    }
+
+    .sidebar-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+
+    .sidebar-close {
+        display: none; /* Hide close button on larger screens */
+    }
 }

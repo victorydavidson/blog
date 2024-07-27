@@ -86,6 +86,7 @@ export default function TopBar() {
                 <i className="top-searchicon fa-solid fa-magnifying-glass"></i>
             </div>
             <div className={`menu ${isMenuOpen ? 'show' : ''}`}>
+                
                 <ul className="menu-list">
                     <li className="menu-item" onClick={closeMenu}><Link className="menu-link" to="/">HOME</Link></li>
                     <li className="menu-item" onClick={closeMenu}><Link className="menu-link" to="/about">ABOUT</Link></li>

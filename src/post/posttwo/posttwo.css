@@ -1,6 +1,7 @@
 .post{
-    width: 385px;
-    margin: 0px 25px 40px 25px;
+    width: calc(50% - 20px); /* Adjust width to fit two columns with gap */
+    margin: 0 10px 20px 10px; /* Adjust margins for spacing */
+    box-sizing: border-box;
 }
 .postImg{
     width: 100%;

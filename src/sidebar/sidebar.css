@@ -12,8 +12,10 @@
     align-items: center;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 998;
     overflow-y: auto;
+    margin: 20px;
+    margin-right: 250px;
     transform: translateX(100%); /* Hide by default on small screens */
     padding: 20px; /* Add padding for better spacing */
 }
@@ -119,6 +121,7 @@
 @media (max-width: 425px) {
     .sidebar {
         display: none; /* Hide sidebar by default on small screens */
+        margin-right: 24px;   
     }
 
     .sidebar.show {
@@ -147,5 +150,23 @@
 
     .sidebar-close {
         display: none; /* Hide close button on larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar by default on small screens */
+        margin-right: 0px;  
+    }
+    .sidebar.show {
+        display: flex; /* Show sidebar when toggled */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show toggle button on small screens */
+    }
+
+    .sidebar-close {
+        display: block; /* Show close button on small screens */
     }
 }

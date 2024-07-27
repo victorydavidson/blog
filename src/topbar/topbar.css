@@ -17,11 +17,12 @@
 }
 
 .top:hover {
-    background-color: #f5f5f5; /* Change background color on hover */
+    color: #f8eded; /* Change background color on hover */
 }
 
 /* Hamburger Menu Styles */
 .hamburger {
+   
     font-size: 24px;
     cursor: pointer;
     display: none; /* Hide by default */
@@ -30,12 +31,14 @@
     padding: 10px; /* Add padding for better spacing */
 }
 
+
 .hamburger:hover {
     color: #007bff; /* Change color on hover */
     transform: scale(1.1); /* Slightly scale up on hover */
 }
 
 .menu {
+    
     display: none; /* Hidden by default */
     position: fixed;
     top: 0;
@@ -52,19 +55,23 @@
 }
 
 .menu.show {
+    background-color: rgb(235, 240, 255);
     display: block; /* Show when active */
     transform: translateX(0); /* Slide in when active */
+    
 }
 
-.menu-list {
+.menu-list {    
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: 44px;
+    
 }
 
-.menu-item {
+.menu .menu-item {
     margin-bottom: 20px;
-    font-size: 24px; /* Larger font size for readability */
+    font-size: 44px !important; /* Larger font size for readability */
     text-align: center; /* Center text */
     color: black; /* Ensure text color is black */
 }
@@ -76,7 +83,7 @@
 }
 
 .menu-item a:hover {
-    color: black; /* Remove color change on hover */
+    color: rgb(53, 52, 52); /* Remove color change on hover */
 }
 
 /* Top Bar Elements */

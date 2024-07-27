@@ -68,12 +68,19 @@
     font-size: 44px;
     
 }
+.menu-list :hover{
+    color: blue ;
+}
 
 .menu .menu-item {
+    margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 44px !important; /* Larger font size for readability */
+    font-size: 20px !important; /* Larger font size for readability */
     text-align: center; /* Center text */
     color: black; /* Ensure text color is black */
+}
+.menu .menu-item :hover {
+    color: #007bff;
 }
 
 /* Remove link styles */
@@ -82,9 +89,6 @@
     color: black; /* Ensure link color is black */
 }
 
-.menu-item a:hover {
-    color: rgb(53, 52, 52); /* Remove color change on hover */
-}
 
 /* Top Bar Elements */
 .top-left {
